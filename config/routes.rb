@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   resources :project_users
   resources :projects
-  resources :usersrail
+  resources :users
 
 
-	post '/usersrail', to: 'usersrail#create'
+	post '/users', to: 'users#create'
 	
 	
-	delete'/usersrail/:id', to:'usersrail#destroy'
+	delete'/users/:id', to:'users#destroy'
 
-	patch'/usersrail/:id', to:'usersrail#update'
+	patch'/users/:id', to:'users#update'
 
-	get'/usersrail/:id', to:'usersrail#show'
+	get'/users/:id', to:'users#show'
 
 	
 
