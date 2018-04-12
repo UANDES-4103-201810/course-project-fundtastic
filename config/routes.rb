@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :rols
   resources :funds
   resources :wishlists
   resources :user_promises
-  resources :admins
   resources :categories
   resources :promises
   resources :project_users
