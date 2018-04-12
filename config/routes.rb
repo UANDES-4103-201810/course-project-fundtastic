@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :admins
+  resources :categories
+  resources :promises
   resources :project_users
   resources :projects
   resources :users
