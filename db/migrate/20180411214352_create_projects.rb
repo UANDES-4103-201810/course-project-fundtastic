@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
     t.text :description
     t.integer :userid
     t.string :promises
+    t.integer :progressamount
       t.timestamps
     end
   end
