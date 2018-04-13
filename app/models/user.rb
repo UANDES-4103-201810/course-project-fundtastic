@@ -9,5 +9,6 @@ class User < ApplicationRecord
 	validates :email, uniqueness: true
 	validates :email, presence: true
 	validates :password, length: { in: 8..12 }
+	validates :password, formatb: {with: /\A[a-zA-Z0-9\.]{8,12}\z/}
 	validates :password, presence: true
 end
