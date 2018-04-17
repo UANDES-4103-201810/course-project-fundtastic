@@ -1,4 +1,6 @@
-<%= image_tag("Logos/Fundtastic.png",width: '150px') %>
+<%= image_tag("Logos/Fundtastic.png",width: '150px') %><%=form_tag users_path, :method=> 'get' do  %>
+  <%=text_field_tag :search ,params[:search]  %>
+  <%=submit_tag"Lets Fund it!"  %><%end%>
 <a href="/users"> Create User</a> <a href="/projects"> Get Funded</a>
 <h1>  Fundtastic </h1>
 
