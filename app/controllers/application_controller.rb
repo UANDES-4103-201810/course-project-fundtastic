@@ -4,7 +4,5 @@ class ApplicationController < ActionController::Base
   def index
   end
 
-  def hola
-    r
-  end
+
 end
