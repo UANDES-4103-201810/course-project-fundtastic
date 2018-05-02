@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+
 <a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
 <% if user_signed_in? %>
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
