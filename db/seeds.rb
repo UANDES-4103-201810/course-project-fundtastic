@@ -4,6 +4,8 @@ Project.create(title: 'volvito', info: 'awesome and safe automovil to go everywh
 Category.create(name: 'technology', project_id: 1)
 Category.create(name: 'car', project_id: 2)
 
+Fund.create(user_id: 1, project_id: 1, cost: 258, stagemail: true, stageaprove: true, stagereceive: true)
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
