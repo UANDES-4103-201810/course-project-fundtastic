@@ -8,13 +8,18 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
+<% if user_signed_in? %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
+<%else%>
+  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
+<%end%>
   <tbody>
     <% @promises.each do |promise| %>
       <tr>
         <td><%= link_to 'Show', promise %></td>
         <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
-        <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
