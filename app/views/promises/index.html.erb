@@ -17,6 +17,7 @@
   <tbody>
     <% @promises.each do |promise| %>
       <tr>
+	<td><%= promise.title %></td>
         <td><%= link_to 'Show', promise %></td>
         <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
 

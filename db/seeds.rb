@@ -6,9 +6,9 @@ Category.create(name: 'car', project_id: 2)
 
 Fund.create(user_id: 1, project_id: 1, cost: 258, stagemail: true, stageaprove: true, stagereceive: true)
 
-Promise.create(title: 'Promise1', info: 'great keychan', price: 100, project_id: 2)
-
 Wishlist.create(user_id: 1, project_id: 1)
+
+Promise.create(title: 'Promise1', info: 'a very nice keychan for your volvito', price: 200, project_id: 2)
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
