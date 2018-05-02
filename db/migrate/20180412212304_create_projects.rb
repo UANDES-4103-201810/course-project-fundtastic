@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.text :info
       t.integer :goal
       t.integer :daystogo
-      t.timestamp :release
+     # t.timestamp :release
       t.references :user, foreign_key: true
 
 

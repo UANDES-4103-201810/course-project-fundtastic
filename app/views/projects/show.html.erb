@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+  <strong>Info:</strong>
+  <%= @project.info %>
+  <strong>Goal:</strong>
+  <%= @project.goal %>
+  <strong>Days to go:</strong>
+  <%= @project.daystogo %>
+  <strong>Publisher:</strong>
+  <%= @user_name%>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
