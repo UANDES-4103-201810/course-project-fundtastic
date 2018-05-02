@@ -1,5 +1,12 @@
 <h2>Forgot your password?</h2>
 
+<a href="/projects"> Get Funded</a> <a href="/categories"> explore</a> <a href="/"> Home</a>
+<% if user_signed_in? %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
+<%else%>
+  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
+<%end%>
+
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
