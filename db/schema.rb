@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20180429012121) do
     t.text "info"
     t.integer "goal"
     t.integer "daystogo"
-    t.datetime "release"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
