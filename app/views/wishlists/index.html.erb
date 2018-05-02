@@ -13,13 +13,17 @@
     <% @wishlists.each do |wishlist| %>
       <tr>
         <td><%= link_to 'Show', wishlist %></td>
-        <td><%= link_to 'Edit', edit_wishlist_path(wishlist) %></td>
-        <td><%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
+<a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
+<% if user_signed_in? %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
+<%else%>
+  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
+<%end%>
 <br>
 
-<%= link_to 'New Wishlist', new_wishlist_path %>
