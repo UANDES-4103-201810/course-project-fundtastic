@@ -62,6 +62,32 @@
 
   </div>
 </nav>
+<div class="container-fluid padding">
+<div class="row padding">
+ <div class="col-md-4">
+  <div class="card">
+   <img class="card-img-top" src="/assets/images/Logos/volvito.jpg">
+   <div class="card-body">
+    <h4 class="card-title">  <%= @project.title %> </h4>
+    <p class="card-text"> <%= @project.info %> </p>
+   </div>
+  </div>
+ </div>
+ <div class="col-md-4">
+  <div class="card">
+   <div class="progress">
+     <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+     </div>
+    <div class="card-body">
+     <h4 class="card-title"> GOAL: <%= @project.goal %> </h4>
+     <p class="card-text"> Days to go: <%= @project.daystogo %> </p>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+
 
 <p>
   <strong>Title:</strong>
