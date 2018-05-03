@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20180429012121) do
     t.string "title"
     t.text "info"
     t.integer "price"
-    t.datetime "date"
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
