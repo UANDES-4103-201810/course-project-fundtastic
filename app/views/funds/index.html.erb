@@ -72,7 +72,13 @@
   </thead>
 
   <tbody>
-
+<form>
+  <div class="form-group">
+    <label for="cost1">How much do you want to fund?</label>
+    <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="Enter amount">
+  </div>
+</form>
+<a href="/funds" class="btn btn-primary m-1"  role="button">Fund it</a>
     <% @funds.each do |fund| %>
       <tr>
 
