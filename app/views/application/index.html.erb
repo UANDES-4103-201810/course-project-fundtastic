@@ -48,8 +48,8 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Profile
                 <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;'%></a></li>
-                <li><a href="/users/1">Profile</a></li>
+                <li <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;'%></li>
+                <li><%= link_to "Profile", user_path(current_user), :style=> 'color:#6a6a6a;'%></li>
 
               </ul>
             </div>
