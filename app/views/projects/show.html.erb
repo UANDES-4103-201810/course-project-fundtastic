@@ -81,7 +81,13 @@
     <div class="card-body">
      <h4 class="card-title"> GOAL: <%= @project.goal %> </h4>
      <p class="card-text"> Days to go: <%= @project.daystogo %> </p>
-     <a href="/funds" class="btn btn-primary m-1"  role="button">Fund it</a>
+     <form>
+      <div class="form-group">
+       <label for="cost1">How much do you want to fund?</label>
+       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="Enter amount">
+      </div>
+     </form>
+     <a class="btn btn-primary m-1"  role="button">Fund it</a>
     </div>
    </div>
   </div>
