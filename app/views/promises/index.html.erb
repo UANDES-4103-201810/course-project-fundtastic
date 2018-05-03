@@ -1,26 +1,91 @@
 <p id="notice"><%= notice %></p>
 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete Bootstrap 4 Website Layout</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="/images/Logos/Fundtastic.png"></a>
+    <button class=navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:#13acbb" href="/categories">Explore</a>
+
+        </li>
+        <li <%=form_tag users_path, :method=> 'get' do  %>
+          <%=text_field_tag :search ,params[:search]  %>
+          <%=submit_tag"Lets Fund it!"  %><%end%>
+        </li>
+
+
+
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:#13acbb" href="/projects">Get Funded</a>
+
+        </li>
+
+        <li class="nav-item active">
+          <% if user_signed_in? %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;'%>
+            <a href="/users/1"> Profile</a>
+          <%else%>
+            <a class="nav-link" href="/users/sign_in">Log in</a>
+
+
+          <%end%>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+</nav>
+
+<p id="notice"><%= notice %></p>
+
 <h1>Promises</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-<a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
-<%else%>
-  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
-<%end%>
+
   <tbody>
     <% @promises.each do |promise| %>
       <tr>
-	<td><%= promise.title %></td>
-        <td><%= link_to 'Show', promise %></td>
-        <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
-
+<div class="container-fluid padding">
+<div class="row padding">
+ <div class="col-md-4">
+  <div class="card">
+   <%= image_tag('key.jpg',width: '150px')%>
+   <div class="card-body">
+    <h4 class="card-title">  <%= promise.title %> </h4>
+    <p class="card-text"> <%= promise.info %> </p>
+    <p class="card-text"> Price: <%= promise.price %> </p>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+	
       </tr>
     <% end %>
   </tbody>
