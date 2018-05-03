@@ -81,6 +81,7 @@
     <div class="card-body">
      <h4 class="card-title"> GOAL: <%= @project.goal %> </h4>
      <p class="card-text"> Days to go: <%= @project.daystogo %> </p>
+     <a href="/funds" class="btn btn-primary m-1"  role="button">Fund it</a>
     </div>
    </div>
   </div>
@@ -96,26 +97,5 @@
 <hr class="my-4">
 </div>
 
+<a href="/promises" class="btn btn-primary m-1"  role="button">Promises</a>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-  <strong>Info:</strong>
-  <%= @project.info %>
-  <strong>Goal:</strong>
-  <%= @project.goal %>
-  <strong>Days to go:</strong>
-  <%= @project.daystogo %>
-  <strong>Publisher:</strong>
-  <%= @user_name%>
-</p>
-<a href="/promises"> Promise</a> 
-<a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
-<%else%>
-  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
-<%end%>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
