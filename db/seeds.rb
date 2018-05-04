@@ -1,8 +1,15 @@
+User.create
+
 Project.create(title: 'galaxy s', info: 'movil for cominication in long distances', goal: 1000, daystogo: '25', user_id: 1)
 Project.create(title: 'volvito', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', user_id: 1)
 
 Category.create(name: 'technology')
 Category.create(name: 'car')
+
+ProjectCategory.create(project_id: 1, category_id: 1)
+ProjectCategory.create(project_id: 2, category_id: 2)
+
+
 
 Fund.create(user_id: 1, project_id: 1, cost: 258, stagemail: true, stageaprove: true, stagereceive: true)
 
