@@ -140,7 +140,7 @@
         <td> <%=x.lastname%></td>
         <td> <%=x.email%></td>
         <td> <%=x.last_sign_in_at%></td>
-        <td> <%= link_to 'Show', x %></td>
+        <td> <%= link_to 'Show','/users/' + x.id.to_s %></td>
         <td> <%= link_to 'Edit', edit_user_path(x) %></td>
         <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

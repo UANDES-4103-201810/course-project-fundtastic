@@ -77,15 +77,16 @@
 
 
 
-<div class="container">
-  <div class="jumbotron">
-    <h1><%= current_user.name %> <%= current_user.lastname %></h1>
-    <strong>Address:</strong>
-    <p> <%= current_user.address %></p>
-    <strong>email:</strong>
-    <p> <%= current_user.email %></p>
-    <strong>credit card info:</strong>
-    <p> <%= current_user.creditcard %></p>
+  <div class="container">
+    <div class="jumbotron">
+      <h1><%= @user.name %> <%= @user.lastname %></h1>
+      <strong>Address:</strong>
+      <p> <%= @user.address %></p>
+      <strong>email:</strong>
+      <p> <%= @user.email %></p>
+      <strong>credit card info:</strong>
+      <p> <%= @user.creditcard %></p>
+
 
 
 </div>
