@@ -2,6 +2,7 @@ User.create
 
 Project.create(title: 'galaxy s', info: 'movil for cominication in long distances', goal: 1000, daystogo: '25', user_id: 1)
 Project.create(title: 'volvito', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', user_id: 1)
+Project.create(title: 'meche', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', user_id: 1)
 
 Category.create(name: 'technology')
 Category.create(name: 'car')
