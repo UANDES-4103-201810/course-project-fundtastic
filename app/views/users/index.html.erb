@@ -1,4 +1,81 @@
 <p id="notice"><%= notice %></p>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete Bootstrap 4 Website Layout</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="/assets/Logos/Fun-2331c2516b8781e6c36fec980ae7e06390d1fca892ce10f3dd750b6a7d4bed40.png" width="150"></a>
+    <button class=navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:#13acbb" href="/categories">Explore</a>
+
+        </li>
+        <li <%=form_tag users_path, :method=> 'get' do  %>
+          <%=text_field_tag :search ,params[:search]  %>
+          <%=submit_tag"Lets Fund it!"  %><%end%>
+        </li>
+
+
+
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:#13acbb" href="/projects">Get Funded</a>
+
+        </li>
+
+        <li class="nav-item active">
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> <%= current_user.name %>
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;'%></li>
+                <li><%= link_to "Profile", user_path(current_user), :style=> 'color:#6a6a6a;'%></li>
+
+              </ul>
+            </div>
+
+
+
+
+
+
+          <%else%>
+            <a class="nav-link" href="/users/sign_in">Log in</a>
+
+
+          <%end%>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+</nav>
+
+<p id="notice"><%= notice %></p>
 
 <%=form_tag users_path, :method=> 'get' do  %>
 <%=text_field_tag :search ,params[:search]  %>
@@ -29,10 +106,51 @@
 
 <br>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<a href="/"> Home</a> <a href="/projects"> Get Funded</a> <a href="/categories"> explore</a>
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#6a6a6a;', :class => 'btn btn-primary m-1'%>
-<%else%>
-  <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
-<%end%>
+<div class="container">
+  <h2>Users</h2>
+           
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Last access</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+	<% @users.each do |x| %>
+	
+      <tr>
+        <td> <%=x.name%></td>
+        <td> <%=x.lastname%></td>
+        <td> <%=x.email%></td>
+        <td> <%=x.last_sign_in_at%></td>
+        <td> <%= link_to 'Show', x %></td>
+        <td> <%= link_to 'Edit', edit_user_path(x) %></td>
+        <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+	<% end%>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
