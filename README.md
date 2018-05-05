@@ -1,5 +1,9 @@
 # README
 
+Estimado corrector el profesor nos indicó que podíamos hacer ocupar la base de dato sqlight en la cual están creados los usuarios
+
+saludos
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
