@@ -22,7 +22,11 @@
     background-color: #3E6BAB!important;
 
 }
-.list-group{
+.list-group-item
+{
     background-color: #13acbb!important;
+    width: 100px;
+    height: 50px;
+    transform: skew(20deg);
 
 }
