@@ -95,6 +95,44 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Projects</h1>
+<div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+</div>
+<div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+</div>
+<div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+</div>
+<div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+</div>
+
+
+  <div class="container">
+    <div class="jumbotron">
+     <% @projects.each do |project| %>
+      <tr>
+	<li><%= project.title %></li>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+</div>
+
+
+
+
 
 <table>
   <thead>
@@ -104,14 +142,8 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-	<td><%= project.title %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+
+    
   </tbody>
 </table>
 
