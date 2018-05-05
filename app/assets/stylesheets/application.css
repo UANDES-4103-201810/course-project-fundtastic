@@ -42,4 +42,29 @@
     background-color: #13acbb!important;
 
 }
+.nav-link{
 
+
+    color:transparent !important;
+
+}
+.card-body{
+    background-color: #3E6BAB!important;
+
+}
+.container-fluid{
+    margin: 0 auto ;
+
+}
+a:link{
+
+
+    color:#ffffff !important;
+
+}
+a:hover{
+
+
+    color:transparent !important;
+
+}
