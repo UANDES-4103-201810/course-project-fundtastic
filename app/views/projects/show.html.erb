@@ -103,12 +103,14 @@
 
 </div>
 <div class="container-fluid padding">
+
 <div class="row padding">
  <div class="col-md-4">
   <div class="card">
    <%= image_tag('volvito.jpeg',width: '500px')%>
    <div class="card-body">
     <h4 class="card-title">  <%= @project.title %> </h4>
+     <p class="card-text"> <%= @project.user.name %> </p>
     <p class="card-text"> <%= @project.info %> </p>
    </div>
   </div>

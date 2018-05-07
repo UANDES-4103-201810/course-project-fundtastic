@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_one :rol
-	has_many :project
-	has_many :fund
-	has_many :user_promise
+	has_many :projects
+	has_many :funds
+	has_many :user_promises
 	has_one :wishlist
 	validates :name, presence: true
 	validates :email, uniqueness: true

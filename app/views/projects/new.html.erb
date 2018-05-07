@@ -119,14 +119,14 @@
     <div class="jumbotron">
 <%= form_for @project, method: 'POST' do |xx| %>
        <label for="cost1">Project title</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
+       <div> <%= xx.text_field :title  %></div>
        <label for="cost1">Description</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
+        <div> <%= xx.text_field :info%></div>
        <label for="cost1">Goal</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
+        <div> <%= xx.text_field :goal  %></div>
        <label for="cost1">Days to go</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
-       <a class="btn btn-primary m-1"  role="button">Create</a>
+        <div> <%= xx.text_field :daystogo  %></div>
+       <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
 
 
 </div>
