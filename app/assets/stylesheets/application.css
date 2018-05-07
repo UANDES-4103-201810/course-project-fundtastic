@@ -16,6 +16,13 @@
 @import "bootstrap";
 .jumbotron
 {background-color: #3E6BAB!important;
+    #display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.container{
+    margin:0 auto;
 
 }
 .table-dark{
@@ -68,3 +75,4 @@ a:hover{
     color:transparent !important;
 
 }
+

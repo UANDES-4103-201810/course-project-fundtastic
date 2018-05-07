@@ -35,6 +35,8 @@ gem 'devise', '~> 4.2'
 
 gem 'bootstrap', '~> 4.0'
 
+gem 'paperclip', '~> 4.3'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
