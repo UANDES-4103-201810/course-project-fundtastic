@@ -118,17 +118,19 @@
 
   <div class="container">
     <div class="jumbotron">
-
+      <%=form_for @promise, method: 'POST' do |xx| %>
        <label for="cost1">Promise title</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
+      <div> <%= xx.text_field :title  %></div>
        <label for="cost1">Description?</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
+      <div> <%= xx.text_field :info  %></div>
        <label for="cost1">Price</label>
-       <input type="cost" class="form-control" id="cost1" aria-describedby="emailHelp" placeholder="">
-       <a class="btn btn-primary m-1"  role="button">Create</a>
+      <div> <%= xx.text_field :price  %></div>
+        <label for="cost1">Project</label>
+        <div> <%= xx.text_field :project_id  %></div>
+       <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
 
 </div>
-
+      <%end%>
 
 
 
