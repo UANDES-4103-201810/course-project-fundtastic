@@ -166,6 +166,10 @@
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
 </div>
+ <% if  @project.user == current_user %>
+<%= link_to 'New Promise', new_promise_path %>
+<%end%>
+
 
 <a href="/promises" class="btn btn-primary m-1"  role="button">Promises</a>
 

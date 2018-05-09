@@ -15,6 +15,7 @@ class PromisesController < ApplicationController
   # GET /promises/new
   def new
     @promise = Promise.new
+
   end
 
   # GET /promises/1/edit
