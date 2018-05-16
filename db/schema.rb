@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180503192558) do
     t.text "info"
     t.integer "goal"
     t.integer "daystogo"
+    t.datetime "release"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180503192558) do
     t.string "title"
     t.text "info"
     t.integer "price"
+    t.datetime "date"
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
