@@ -118,8 +118,9 @@
   <div class="container">
     <div class="jumbotron">
       <h1>New Project</h1>
-<%= form_for @project, method: 'POST' do |xx| %>
-       <label for="cost1">Project title</label>
+<%= form_for @project, html: { multipart: true },method: 'POST' do |xx| %>
+        <div> <%= xx.file_field :image  %></div>
+        <label for="cost1">Project title</label>
        <div> <%= xx.text_field :title  %></div>
        <label for="cost1">Description</label>
         <div> <%= xx.text_field :info%></div>

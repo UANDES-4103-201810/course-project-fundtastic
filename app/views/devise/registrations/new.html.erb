@@ -117,8 +117,12 @@
   <div class="container">
     <div class="jumbotron">
  <h2>Sign up</h2>
-<%= form_for @user, method: 'POST' do |f| %>
+<%= form_for @user,html: { multipart: true }, method: 'POST' do |f| %>
   <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :avatar %><br />
+          <%= f.file_field :avatar, autofocus: true%>
+        </div>
 
   <div class="field">
     <%= f.label :Email %><br />
