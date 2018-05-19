@@ -77,12 +77,11 @@ a:hover{
 }
 #notice_wrapper{
     position: absolute;
-    top:0;
+    top: 12%;
     width: 100%;
-    z-index:9999;
-    background:#13acbb;
-
-.alert,.notice{
+    z-index: 9999;
+    background:#13acbb;}
+.alert , .notice{
     padding:2.5rem 0;
     text-align: center;
     margin: 0;
@@ -94,5 +93,5 @@ a:hover{
 
 
 
-}
+
 

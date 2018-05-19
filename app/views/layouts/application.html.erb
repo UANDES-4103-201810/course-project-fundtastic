@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>CourseProject</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <%= csrf_meta_tags %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,13 +13,22 @@
   <body>
   <% if notice %>
    <div id="notice_wrapper">
-     <p class="notice"><%= notice %> </p>
-  </div>
-    <%elsif alert %>
-      <div id="notice_wrapper">
-        <p class="alert"><%= alert %> </p>
+     <p class="notice"><%= notice %></p>
+   </div>
+  <%elsif alert %>
+    <div id="notice_wrapper">
+      <p class="alert"><%= alert %></p>
     </div>
-    <%end%>
+  <%end%>
+
+
+    <script>
+
+
+
+
+
+    </script>
     <%= yield %>
 
   </body>
