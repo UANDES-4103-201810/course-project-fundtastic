@@ -5,7 +5,7 @@ class Project < ApplicationRecord
 	has_many :promises
 	has_many :project_categories
 	has_many :categories, :through => :project_categories
-	has_attached_file :image ,  styles: { medium: "200x200>", big: "500x500#" }
+	has_attached_file :image ,  styles: { medium: "200x200>", big: "500x500" }
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	validates :title, presence: true
 	validates :info, presence: true
