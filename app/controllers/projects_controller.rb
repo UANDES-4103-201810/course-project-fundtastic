@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project.user.name
+
   end
 
   # GET /projects/new

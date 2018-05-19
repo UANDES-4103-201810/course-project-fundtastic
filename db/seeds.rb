@@ -9,6 +9,7 @@ Category.create(name: 'car')
 
 ProjectCategory.create(project_id: 1, category_id: 1)
 ProjectCategory.create(project_id: 2, category_id: 2)
+ProjectCategory.create(project_id: 3, category_id: 2)
 
 
 
