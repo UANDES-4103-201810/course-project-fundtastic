@@ -94,6 +94,8 @@
 
 
 <% @projects.each do |project| %>
-  <div> <%= project.title %> </div>
+  <td> <%= project.title %> </td>
+  <td><%= link_to 'Show', project %></td>
+  <div></div>
 <% end %>
 

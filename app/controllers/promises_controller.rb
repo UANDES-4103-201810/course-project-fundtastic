@@ -15,7 +15,7 @@ class PromisesController < ApplicationController
   # GET /promises/new
   def new
     @promise = Promise.new
-
+    @id = params[:p_id]
   end
 
   # GET /promises/1/edit
@@ -25,6 +25,7 @@ class PromisesController < ApplicationController
   # POST /promises
   # POST /promises.json
   def create
+    @id = params[:p_id]
     @promise = Promise.new(promise_params)
 
     respond_to do |format|
@@ -63,13 +64,13 @@ class PromisesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_promise
-      @promise = Promise.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_promise
+    @promise = Promise.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def promise_params
-      params.require(:promise).permit( :title, :info, :price, :date, :project_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def promise_params
+    params.require(:promise).permit( :title, :info, :price, :project_id)
+  end
 end

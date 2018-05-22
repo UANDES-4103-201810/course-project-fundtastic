@@ -59,7 +59,7 @@
 
 
 
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
             <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" style="color:#ffffff" type="button" data-toggle="dropdown"> <%= current_user.name %>
@@ -67,7 +67,7 @@
               <ul class="dropdown-menu">
 
                 <li><%= link_to "Profile", user_path(current_user), :style=> 'color:#ffffff;'%></li>
-      <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#ffffff;'%></li>
+                <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#ffffff;'%></li>
 
               </ul>
             </div>
@@ -77,20 +77,20 @@
 
 
 
-          <%else%>
-            <a class="btn btn-info" style="color:#ffffff" href="/users/sign_in">Log in</a>
+        <%else%>
+          <a class="btn btn-info" style="color:#ffffff" href="/users/sign_in">Log in</a>
 
 
-          <%end%>
+        <%end%>
         </li>
 
       </ul>
 
-            </div>
+    </div>
 
 
-            </div>
-            </nav>
+  </div>
+</nav>
 
 <h1>New Promise</h1>
 
@@ -116,21 +116,23 @@
 </div>
 
 
-  <div class="container">
-    <div class="jumbotron">
-      <%=form_for @promise, method: 'POST' do |xx| %>
-       <label for="cost1">Promise title</label>
+<div class="container">
+  <div class="jumbotron">
+    <%=form_for @promise, method: 'POST' do |xx| %>
+      <label for="cost1">Promise title</label>
       <div> <%= xx.text_field :title  %></div>
-       <label for="cost1">Description?</label>
+      <label for="cost1">Description?</label>
       <div> <%= xx.text_field :info  %></div>
-       <label for="cost1">Price</label>
+      <label for="cost1">Price</label>
       <div> <%= xx.text_field :price  %></div>
-     
-       <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+      <label for="cost1">Project id</label>
+      <p> <%= xx.text_field :project_id, :value => @id, :disabled => true%></p>
+      <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
 
-</div>
-      <%end%>
+      </div>
+    <%end%>
 
 
 
-<%= link_to 'Back', promises_path %>
+    <%= link_to 'Back', promises_path %>
+<%= @id %>
