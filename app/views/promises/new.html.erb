@@ -125,8 +125,8 @@
       <div> <%= xx.text_field :info  %></div>
       <label for="cost1">Price</label>
       <div> <%= xx.text_field :price  %></div>
-      <label for="cost1">Project id</label>
-      <p> <%= xx.text_field :project_id, :value => @id, :disabled => true%></p>
+
+      <p> <%= xx.hidden_field :project_id, :value => @id, :disabled => true%></p>
       <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
 
       </div>
@@ -135,3 +135,4 @@
 
 
     <%= link_to 'Back', promises_path %>
+    <%= @id%>
