@@ -16,6 +16,7 @@ class PromisesController < ApplicationController
   def new
     @promise = Promise.new
     @id = params[:p_id]
+
   end
 
   # GET /promises/1/edit
