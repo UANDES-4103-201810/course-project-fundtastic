@@ -26,8 +26,7 @@ class PromisesController < ApplicationController
   # POST /promises
   # POST /promises.json
   def create
-    @id = params[:p_id]
-    @promise = Promise.new(promise_params)
+    @promise = Promise.create(promise_params)
 
     respond_to do |format|
       if @promise.save
