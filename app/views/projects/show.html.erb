@@ -112,8 +112,7 @@
     <h4 class="card-title">  <%= @project.title %> </h4>
      <p class="card-text"> <%= @project.user.name %> </p>
     <p class="card-text"> <%= @project.info %> </p>
-     if @project.id== @promise.project_id
-     <p class="card-text"> <%= @promise.name %> </p>
+
    </div>
   </div>
  </div>
@@ -168,12 +167,42 @@
   &nbsp; &nbsp; &nbsp; &nbsp;
 </div>
 <% @promises.each do |promise| %>
-  <td> <%= promise.title %> </td>
 
-  <td> <%= promise.info %> </td>
-  <td> <%= promise.price %> </td>
 
-  <td><%= link_to 'Show', promise %></td>
+
+  <tbody>
+
+  <tr>
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-2">
+          <div class="card">
+
+            <div class="card-body">
+              <%= image_tag promise.image.url(:medium)%>
+              <h4 class="card-title">  <%= promise.title %> </h4>
+              <p class="card-text"> <%= promise.info %> </p>
+              <p class="card-text"> Price: <%= promise.price %> </p>
+              <a class="btn btn-primary m-1"  role="button">Buy</a>
+              <a class="btn btn-primary m-1"  role="button">Edit</a>
+              <td><%= link_to 'Show', promise %></td>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+  </tr>
+
+  </tbody>
+
+
+
   <div></div>
 <% end %>
 
