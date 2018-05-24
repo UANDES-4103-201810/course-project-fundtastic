@@ -121,7 +121,7 @@
           <div class="card">
 
             <div class="card-body">
-              <%= image_tag('key.jpg',width: '150px')%>
+              <%= image_tag @promise.image.url(:medium)%>
               <h4 class="card-title">  <%= @promise.title %> </h4>
               <p class="card-text"> <%= @promise.info %> </p>
               <p class="card-text"> Price: <%= @promise.price %> </p>

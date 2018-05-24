@@ -118,7 +118,8 @@
 
 <div class="container">
   <div class="jumbotron">
-    <%=form_for @promise, method: 'POST' do |xx| %>
+    <%=form_for @promise, html: { multipart: true }, method: 'POST' do |xx| %>
+      <div> <%= xx.file_field :image  %></div>
       <label for="cost1">Promise title</label>
       <div> <%= xx.text_field :title  %></div>
       <label for="cost1">Description?</label>
