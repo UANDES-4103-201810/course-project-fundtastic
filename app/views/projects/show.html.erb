@@ -211,9 +211,16 @@
 <%= link_to 'New Promise', new_promise_path(p_id: @project.id) %>
 <%end%>
 
+<div></div>
+<div></div>
+<div></div>
 
 
-
+<% @categories.each do |category| %>
+  <td> <%= category.name %> </td>
+  <td><%= link_to 'Show', category %></td>
+  <div></div>
+<% end %>
 <a href="/promises" class="btn btn-primary m-1"  role="button">Promises</a>
 
 
