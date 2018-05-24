@@ -1,5 +1,14 @@
 <h1>New Project Category</h1>
 
-<%= render 'form', project_category: @project_category %>
+<%= @idd %>
 
-<%= link_to 'Back', project_categories_path %>
+
+<%=form_for @project_category, method: 'POST' do |xx| %>
+
+
+  <p> <%= xx.hidden_field :project_id, :value => @idd%></p>
+  <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+  <%= xx.collection_select(:category_id ,Category.all, :id,:name, include_blank: true) %>
+
+  </div>
+<%end%>

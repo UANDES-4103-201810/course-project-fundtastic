@@ -15,6 +15,7 @@ class ProjectCategoriesController < ApplicationController
   # GET /project_categories/new
   def new
     @project_category = ProjectCategory.new
+    @idd = params[:pc_id]
   end
 
   # GET /project_categories/1/edit
@@ -69,6 +70,6 @@ class ProjectCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_category_params
-      params.fetch(:project_category, {})
+      params.require(:project_category).permit( :project_id, :category_id)
     end
 end
