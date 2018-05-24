@@ -167,6 +167,15 @@
 
   &nbsp; &nbsp; &nbsp; &nbsp;
 </div>
+<% @promises.each do |promise| %>
+  <td> <%= promise.title %> </td>
+
+  <td> <%= promise.info %> </td>
+  <td> <%= promise.price %> </td>
+
+  <td><%= link_to 'Show', promise %></td>
+  <div></div>
+<% end %>
 
 
  <% if  @project.user == current_user %>

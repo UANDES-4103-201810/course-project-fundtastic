@@ -12,6 +12,8 @@ class ProjectsController < ApplicationController
   def show
     @project.user.name
 
+    @promises = @project.promises
+
   end
 
   # GET /projects/new
