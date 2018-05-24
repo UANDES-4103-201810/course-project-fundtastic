@@ -125,7 +125,13 @@
 </div><div>
 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <% @projects.each do |project| %>
+      <td> <%= project.title %> </td>
 
+
+      <td><%= link_to 'Show', project %></td>
+      <div></div>
+    <% end %>
   </div>
     <div>
 
