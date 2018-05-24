@@ -5,7 +5,7 @@ class Promise < ApplicationRecord
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	validates :price, numericality: {greater_than_or_equal_to: 0}
 	validates :title, presence: true
-	#validates :date, presence: true
+	validates :date, presence: true
 	validates :info, presence: true
 
 end
