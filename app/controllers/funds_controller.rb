@@ -1,6 +1,6 @@
 class FundsController < ApplicationController
   before_action :set_fund, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /funds
   # GET /funds.json
   def index
