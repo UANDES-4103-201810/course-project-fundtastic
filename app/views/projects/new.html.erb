@@ -128,9 +128,11 @@
         <div> <%= xx.text_field :goal  %></div>
        <label for="cost1">Days to go</label>
         <div> <%= xx.text_field :daystogo  %></div>
-        <label for="cost1">Categories</label>
-        <%= xx.collection_select(:category,Category.all, :id,:name, include_blank: true) %>
+
        <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+
+
+
 
 
 </div>
@@ -140,4 +142,4 @@
 
 <% end %>
 
-<%= link_to 'Back', projects_path %>
+      </div>

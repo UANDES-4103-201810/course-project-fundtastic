@@ -125,14 +125,26 @@
 </div><div>
 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <% @projects.each do |project| %>
-      <td> <%= project.title %> </td>
-
-
-      <td><%= link_to 'Show', project %></td>
-      <div></div>
-    <% end %>
   </div>
+    <div class="jumbotron">
+      <div class="row">
+    <% @projects[0..2].each do |project| %>
+
+
+
+
+          <div class="col-sm">
+            <h1><%=image_tag  project.image.url(:medium) %> </h1>
+            <td> <%= project.title %> </td>
+            <td><%= link_to 'Show', project %></td>
+          </div>
+
+
+
+    <% end %>
+      </div>
+    </div>
+
     <div>
 
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

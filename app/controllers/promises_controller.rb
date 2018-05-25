@@ -21,6 +21,7 @@ class PromisesController < ApplicationController
 
   # GET /promises/1/edit
   def edit
+
   end
 
   # POST /promises

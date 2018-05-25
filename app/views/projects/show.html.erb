@@ -110,8 +110,14 @@
    <%= image_tag @project.image.url(:medium)%>
    <div class="card-body">
     <h4 class="card-title">  <%= @project.title %> </h4>
-     <p class="card-text"> <%= @project.user.name %> </p>
+     <p class="card-text">by: <%= @project.user.name %> </p>
     <p class="card-text"> <%= @project.info %> </p>
+     <% @categories.each do |category| %>
+       <td> <%="Category " +category.name %> </td>
+       <td><%= link_to 'Show', category %></td>
+       <div></div>
+     <% end %>
+
 
    </div>
   </div>
@@ -166,6 +172,11 @@
 
   &nbsp; &nbsp; &nbsp; &nbsp;
 </div>
+<% if  @project.user == current_user %>
+
+  <%= link_to 'New Promise', new_promise_path(p_id: @project.id) %>
+<%end%>
+
 <% @promises.each do |promise| %>
 
 
@@ -185,7 +196,7 @@
               <p class="card-text"> <%= promise.info %> </p>
               <p class="card-text"> Price: <%= promise.price %> </p>
               <a class="btn btn-primary m-1"  role="button">Buy</a>
-              <a class="btn btn-primary m-1"  role="button">Edit</a>
+              <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
               <td><%= link_to 'Show', promise %></td>
 
             </div>
@@ -208,14 +219,14 @@
 <% end %>
 
 
- <% if  @project.user == current_user %>
-<%= link_to 'New Promise', new_promise_path(p_id: @project.id) %>
-<%end%>
+
+<div></div>
+<div></div>
+<div></div>
 
 
 
 
-<a href="/promises" class="btn btn-primary m-1"  role="button">Promises</a>
 
 
 

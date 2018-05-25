@@ -113,21 +113,30 @@
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
 </div>
+<%=@id%>
 
+<div class="container">
+  <div class="jumbotron">
+    <%=form_for @promise, html: { multipart: true }, method: 'PATCH' do |xx| %>
+      <div> <%= xx.file_field :image  %></div>
+      <label for="cost1">Promise title</label>
+      <div> <%= xx.text_field :title  %></div>
+      <label for="cost1">Description?</label>
+      <div> <%= xx.text_field :info  %></div>
+      <label for="cost1">Price</label>
+      <div> <%= xx.text_field :price  %></div>
+      <label for="cost1">Select date</label>
+      <div> <%= xx.datetime_select :date%></div>
 
-  <div class="container">
-    <div class="jumbotron">
-      <h1></h1>
-      <strong>Address:</strong>
-      <p> </p>
-      <strong>email:</strong>
-      <p> </p>
-      <strong>credit card info:</strong>
-      <p> </p>
+      <p> <%= xx.hidden_field :project_id, :value => @promise.project_id%></p>
+      <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+
+      </div>
+    <%end%>
 
 </div>
 
-<%= render 'form', promise: @promise %>
 
+<%=@id%>
 <%= link_to 'Show', @promise %> |
 <%= link_to 'Back', promises_path %>

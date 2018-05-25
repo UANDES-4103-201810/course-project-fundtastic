@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 
 gem 'bootstrap', '~> 4.0'
+gem 'cancancan', '~> 1.15'
 
 gem 'paperclip', '~> 4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
