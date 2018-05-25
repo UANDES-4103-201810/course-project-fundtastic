@@ -15,6 +15,9 @@ class FundsController < ApplicationController
   # GET /funds/new
   def new
     @fund = Fund.new
+    @uid = params[:u_id]
+    @pid = params[:f_id]
+
   end
 
   # GET /funds/1/edit
@@ -69,6 +72,6 @@ class FundsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fund_params
-      params.fetch(:fund, {})
+      params.require(:fund).permit( :user_id, :project_id, :cost)
     end
 end
