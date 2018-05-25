@@ -121,7 +121,7 @@
       <p> <%= xx.hidden_field :project_id, :value => @idd%></p>
       <%= xx.collection_select(:category_id ,Category.all, :id,:name, include_blank: true) %>
 
-      <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+      <a class="btn btn-primary m-1"  role="button"><%= xx.submit "Create Proyect" %></a>
 
       </div>
     <%end%>
