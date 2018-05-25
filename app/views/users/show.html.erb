@@ -181,18 +181,30 @@
 <p id="notice"><%= notice %></p>
 
 
-<a href="/wishlists" class="btn btn-primary m-1"  role="button">User Wishlist</a>
 
       <div></div>
       <div></div>
 
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="container">
+        <div class="jumbotron">
+      <h1>Funds</h1>
       <% Fund.all.each do |fund| %>
         <% if fund.user_id == @user.id %>
-          <%= fund.project_id %>
-        <% end %>
-      <% end %>
-      <div></div>
-        <%  Fund.where(:user_id => @user.id) do |funds| %>
-        <%= funds.project_id %>
-      <% end %>
+          <% Project.all.each do |project| %>
+            <% if fund.project_id == project.id %>
 
+              <div class="col-sm">
+                <h1><%=image_tag  project.image.url(:medium) %> </h1>
+                <td> <%= project.title %> </td>
+                <td><%= link_to 'Show', project %></td>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+<% end %>
+        </div>
