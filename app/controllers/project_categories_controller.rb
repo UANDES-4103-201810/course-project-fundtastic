@@ -29,7 +29,7 @@ class ProjectCategoriesController < ApplicationController
 
     respond_to do |format|
       if @project_category.save
-        format.html { redirect_to @project_category, notice: 'Project category was successfully created.' }
+        format.html { redirect_to "/projects/"+@project_category.project_id.to_s, notice: 'Project  was successfully created.' }
         format.json { render :show, status: :created, location: @project_category }
       else
         format.html { render :new }

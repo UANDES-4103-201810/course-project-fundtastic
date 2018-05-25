@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(project_params)
     respond_to do |format|
       if @project.save
-        format.html { redirect_to new_project_category_path(pc_id: @project.id), notice: 'Project was successfully created.' }
+        format.html { redirect_to new_project_category_path(pc_id: @project.id) }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
