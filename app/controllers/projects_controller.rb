@@ -14,6 +14,12 @@ class ProjectsController < ApplicationController
     @project.user.name
     @promises = @project.promises
     @categories = @project.categories
+    @funds = @project.funds
+    @total = 0
+    @funds.each do |fund|
+      @total = @total + fund.cost
+      end
+
   end
 
   # GET /projects/new

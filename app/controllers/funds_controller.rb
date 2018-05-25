@@ -31,7 +31,7 @@ class FundsController < ApplicationController
 
     respond_to do |format|
       if @fund.save
-        format.html { redirect_to @fund, notice: 'Fund was successfully created.' }
+        format.html { redirect_to "/projects/"+@fund.project_id.to_s, notice: 'Fund was successfully created.' }
         format.json { render :show, status: :created, location: @fund }
       else
         format.html { render :new }
