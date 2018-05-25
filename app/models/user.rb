@@ -9,7 +9,7 @@ class User < ApplicationRecord
 	has_many :projects ,:dependent => :destroy
 	has_many :funds,:dependent => :destroy
 	has_many :user_promises,:dependent => :destroy
-	has_one :wishlist
+	has_many :wishlist
 	validates :name, presence: true
 	validates :email, uniqueness: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, message: "Error" }
