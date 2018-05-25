@@ -92,7 +92,7 @@
   </div>
 </nav>
 
-<h1>New Promise</h1>
+
 
 <div>
 
@@ -117,7 +117,9 @@
 
 
 <div class="container">
+
   <div class="jumbotron">
+    <h1>New Promise</h1>
     <%=form_for @promise, html: { multipart: true }, method: 'POST' do |xx| %>
       <div> <%= xx.file_field :image  %></div>
       <label for="cost1">Promise title</label>
@@ -137,5 +139,4 @@
 
 
 
-    <%= link_to 'Back', promises_path %>
-    <%= @id%>
+
