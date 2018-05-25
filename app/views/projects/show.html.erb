@@ -139,8 +139,7 @@
     </div>
       <div></div>
 
-    <%= link_to 'Add to wishlist', new_wishlist_path(uu_id: @project.user_id , w_id: @project.id  ) %>
-
+    <%= link_to 'Add to wishlist', new_wishlist_path(uu_id: @current_user.id , w_id: @project.id  ) %>
   </div>
   </div>
  </div>

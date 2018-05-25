@@ -160,11 +160,20 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Wishlist</h1>
+        <% Wishlist.all.each do |wishlist| %>
+          <% if wishlist.user_id == @user.id %>
+            <% Project.all.each do |project| %>
+              <% if wishlist.project_id == project.id %>
 
-
-        <%= image_tag('car.jpg',width: '150px')%>
-        <%= image_tag('phones.jpeg',width: '150px')%>
-        <%= image_tag('plane.jpeg',width: '150px')%>
+                <div class="col-sm">
+                  <h1><%=image_tag  project.image.url(:medium) %> </h1>
+                  <td> <%= project.title %> </td>
+                  <td><%= link_to 'Show', project %></td>
+                </div>
+          <% end %>
+            <% end %>
+        <% end %>
+        <% end %>
 
       </div>
 
@@ -175,7 +184,6 @@
 <a href="/wishlists" class="btn btn-primary m-1"  role="button">User Wishlist</a>
 
       <div></div>
-
       <div></div>
 
       <% Fund.all.each do |fund| %>
@@ -187,3 +195,4 @@
         <%  Fund.where(:user_id => @user.id) do |funds| %>
         <%= funds.project_id %>
       <% end %>
+
