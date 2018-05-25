@@ -196,8 +196,12 @@
               <p class="card-text"> <%= promise.info %> </p>
               <p class="card-text"> Price: <%= promise.price %> </p>
               <a class="btn btn-primary m-1"  role="button">Buy</a>
-              <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
-              <td><%= link_to 'Show', promise %></td>
+              <% if  promise.project_id == @project.id && @project.user == current_user %>
+
+                <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
+                <td><%= link_to 'Destroy',promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+            <%end%>
 
             </div>
           </div>

@@ -31,7 +31,7 @@ class PromisesController < ApplicationController
 
     respond_to do |format|
       if @promise.save
-        format.html { redirect_to @promise, notice: 'Promise was successfully created.' }
+        format.html { redirect_to "/projects/"+@promise.project_id.to_s, notice: 'Promise was successfully created.' }
         format.json { render :show, status: :created, location: @promise }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class PromisesController < ApplicationController
   def update
     respond_to do |format|
       if @promise.update(promise_params)
-        format.html { redirect_to @promise, notice: 'Promise was successfully updated.' }
+        format.html { redirect_to "/projects/"+@promise.project_id.to_s, notice: 'Promise was successfully updated.' }
         format.json { render :show, status: :ok, location: @promise }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class PromisesController < ApplicationController
   def destroy
     @promise.destroy
     respond_to do |format|
-      format.html { redirect_to promises_url, notice: 'Promise was successfully destroyed.' }
+      format.html { redirect_to "/projects/"+@promise.project_id.to_s, notice: 'Promise was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
