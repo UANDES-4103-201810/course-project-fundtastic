@@ -30,7 +30,7 @@ class WishlistsController < ApplicationController
 
     respond_to do |format|
       if @wishlist.save
-        format.html { redirect_to @wishlist, notice: 'Wishlist was successfully created.' }
+        format.html { redirect_to "/projects/"+@wishlist.project_id.to_s, notice: 'Wishlist was successfully created.' }
         format.json { render :show, status: :created, location: @wishlist }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class WishlistsController < ApplicationController
   def update
     respond_to do |format|
       if @wishlist.update(wishlist_params)
-        format.html { redirect_to @wishlist, notice: 'Wishlist was successfully updated.' }
+        format.html { redirect_to "/users/"+@wishlist.user_id.to_s, notice: 'Wishlist was successfully updated.' }
         format.json { render :show, status: :ok, location: @wishlist }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class WishlistsController < ApplicationController
   def destroy
     @wishlist.destroy
     respond_to do |format|
-      format.html { redirect_to wishlists_url, notice: 'Wishlist was successfully destroyed.' }
+      format.html { redirect_to "/users/"+@wishlist.user_id.to_s, notice: 'Wishlist was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

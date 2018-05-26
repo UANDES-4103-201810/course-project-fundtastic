@@ -122,21 +122,20 @@
       <strong>credit card info:</strong>
       <p> <%= @user.creditcard %></p>
       <div class="fundedp">
-      <h1>Funded Projects </h1>
-      <ul class="w3-ul w3-small">
-        <li>Jill</li>
-        <li>Eve</li>
-        <li>Adam</li>
-      </ul>
+
+
       </div>
 </div><div>
 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
   </div>
     <div class="jumbotron">
+      <div class="page-header">
+        <h1>My Projects</h1>
+      </div>
       <div class="row">
-        <h1>My projects</h1>
-    <% @projects[0..2].each do |project| %>
+
+    <% @projects.each do |project| %>
 
 
 
@@ -145,6 +144,7 @@
             <h1><%=image_tag  project.image.url(:medium) %> </h1>
             <td> <%= project.title %> </td>
             <td><%= link_to 'Show', project %></td>
+            <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </div>
 
 
@@ -160,7 +160,9 @@
     </div>
     <div class="container">
       <div class="jumbotron">
-        <h1>Wishlist</h1>
+          <div class="page-header">
+            <h1>Wishlist</h1>
+      </div>
         <% Wishlist.all.each do |wishlist| %>
           <% if wishlist.user_id == @user.id %>
             <% Project.all.each do |project| %>
@@ -170,6 +172,7 @@
                   <h1><%=image_tag  project.image.url(:medium) %> </h1>
                   <td> <%= project.title %> </td>
                   <td><%= link_to 'Show', project %></td>
+                  <td><%= link_to 'Delete', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
                 </div>
           <% end %>
             <% end %>
@@ -193,7 +196,10 @@
       <div></div>
       <div class="container">
         <div class="jumbotron">
-      <h1>Funds</h1>
+          <div class="page-header">
+            <h1>Funded Projects</h1>
+          </div>
+
       <% Fund.all.each do |fund| %>
         <% if fund.user_id == @user.id %>
           <% Project.all.each do |project| %>

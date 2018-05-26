@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:create, :index]
   # GET /projects
   # GET /projects.json
   def index
