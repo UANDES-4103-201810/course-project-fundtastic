@@ -101,7 +101,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<% if user_signed_in? && current_user.admin==true%>
 <a href="/users"> View Users</a> 
 <a> </a>
  <div> </div>
@@ -116,7 +116,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%end%>
 <br>
 
 

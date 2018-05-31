@@ -10,6 +10,7 @@ class RolsController < ApplicationController
   # GET /rols/1
   # GET /rols/1.json
   def show
+    @users=@rol.users
   end
 
   # GET /rols/new

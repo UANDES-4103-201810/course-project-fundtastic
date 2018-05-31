@@ -115,6 +115,8 @@ a:hover, a:active {
     color:#ffffff;
 }
 
-
+.navbar-brand{
+    background-color:transparent ;
+}
 
 

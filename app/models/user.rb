@@ -14,7 +14,9 @@ class User < ApplicationRecord
 	validates :email, uniqueness: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, message: "Error" }
 	validates :password, length: { in: 8..12 }
-
+	def admin?
+		self.admin == true
+	end
 	def self.search(search)
 		if search
 			where(["name LIKE ?", "%#{search}%"])
