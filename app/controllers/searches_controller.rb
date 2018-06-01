@@ -17,7 +17,7 @@ end
   private
 
   def search_params
-    params.require(:search).permit(:keywords,:category)
+    params.require(:search).permit(:keywords,:category, :info)
   end
 end
 
