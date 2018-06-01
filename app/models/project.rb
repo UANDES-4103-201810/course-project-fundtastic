@@ -11,5 +11,11 @@ class Project < ApplicationRecord
 	validates :info, presence: true
 	validates :goal, numericality: {greater_than_or_equal_to: 0}
 	validates :daystogo, numericality: {greater_than_or_equal_to: 0}
-
+	def self.search(search)
+		if search
+			where(["title LIKE ?", "%#{search}%"])
+		else
+			all
+		end
+	end
 end

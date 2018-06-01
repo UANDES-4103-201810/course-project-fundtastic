@@ -1,0 +1,22 @@
+<% @search.search_projects.each do |c|%>
+<div class="div" >
+
+
+  <div class="container">
+    <div class="jumbotron">
+      <tr>
+        <%= image_tag c.image.url(:medium) %>
+        <li><%= c.title %></li>
+
+        <td><%= link_to 'Show', c %></td>
+        <% if  c.user == current_user %>
+          <td><%= link_to 'Edit', edit_project_path(c) %></td>
+          <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    </div>
+
+
+
+</div>
+<%end%>

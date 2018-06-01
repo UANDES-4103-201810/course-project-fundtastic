@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :project_users
   resources :projects
   resources :users
+  resources :searches
 
 
   root to: 'application#index'
