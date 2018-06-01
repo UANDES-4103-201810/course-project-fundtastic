@@ -38,6 +38,11 @@ gem 'cancancan', '~> 1.15'
 
 gem 'paperclip', '~> 4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'therubyracer'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
 
 
 # Use Capistrano for deployment
