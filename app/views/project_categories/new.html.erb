@@ -33,9 +33,10 @@
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
         </div>
-        <li <%=form_tag users_path, :method=> 'get' do  %>
+        <li <%=form_tag projects_path, :method=> 'get' do  %>
           <%=text_field_tag :search ,params[:search]  %>
           <%=submit_tag"Lets Fund it!"  %><%end%>
+        <%=link_to"Advanced Search", new_search_path%>
         </li>
 
         <div>
@@ -91,6 +92,8 @@
 
   </div>
 </nav>
+
+
 <div>
 
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

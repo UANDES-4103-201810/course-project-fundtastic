@@ -1,3 +1,82 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="/assets/Logos/Fun-2331c2516b8781e6c36fec980ae7e06390d1fca892ce10f3dd750b6a7d4bed40.png" width="150"></a>
+
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="btn btn-info" style="color:#ffffff" href="/categories">Explore</a>
+
+        </li>
+        <div>
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+        <li <%=form_tag projects_path, :method=> 'get' do  %>
+          <%=text_field_tag :search ,params[:search]  %>
+          <%=submit_tag"Lets Fund it!"  %><%end%>
+        <%=link_to"Advanced Search", new_search_path%>
+        </li>
+
+        <div>
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="btn btn-info" style="color:#ffffff" href="/projects">Get Funded</a>
+
+        </li>
+        <div>
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+
+
+
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" style="color:#ffffff" type="button" data-toggle="dropdown"> <%= current_user.name %>
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+
+                <li><%= link_to "Profile", user_path(current_user), :style=> 'color:#ffffff;'%></li>
+                <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#ffffff;'%></li>
+
+              </ul>
+            </div>
+
+
+
+
+
+
+        <%else%>
+          <a class="btn btn-info" style="color:#ffffff" href="/users/sign_in">Log in</a>
+
+
+        <%end%>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+</nav>
+
+
+
+
 <% @search.search_projects.each do |c|%>
 <div class="div" >
 

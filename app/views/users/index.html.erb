@@ -32,9 +32,10 @@
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
         </div>
-        <li <%=form_tag users_path, :method=> 'get' do  %>
+        <li <%=form_tag projects_path, :method=> 'get' do  %>
           <%=text_field_tag :search ,params[:search]  %>
           <%=submit_tag"Lets Fund it!"  %><%end%>
+        <%=link_to"Advanced Search", new_search_path%>
         </li>
 
         <div>
@@ -58,7 +59,7 @@
 
 
 
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
             <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" style="color:#ffffff" type="button" data-toggle="dropdown"> <%= current_user.name %>
@@ -66,7 +67,7 @@
               <ul class="dropdown-menu">
 
                 <li><%= link_to "Profile", user_path(current_user), :style=> 'color:#ffffff;'%></li>
-      <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#ffffff;'%></li>
+                <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#ffffff;'%></li>
 
               </ul>
             </div>
@@ -76,20 +77,20 @@
 
 
 
-          <%else%>
-            <a class="btn btn-info" style="color:#ffffff" href="/users/sign_in">Log in</a>
+        <%else%>
+          <a class="btn btn-info" style="color:#ffffff" href="/users/sign_in">Log in</a>
 
 
-          <%end%>
+        <%end%>
         </li>
 
       </ul>
 
-            </div>
+    </div>
 
 
-            </div>
-            </nav>
+  </div>
+</nav>
 <p id="notice"><%= notice %></p>
 
 <%=form_tag users_path, :method=> 'get' do  %>
