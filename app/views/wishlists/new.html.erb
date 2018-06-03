@@ -31,16 +31,14 @@
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
         </div>
-        <li <%=form_tag users_path, :method=> 'get' do  %>
-          <%=text_field_tag :search ,params[:search]  %>
-          <%=submit_tag"Lets Fund it!"  %><%end%>
-        </li>
+        <%=link_to"Search it", new_search_path%>
+      </ul>
 
-        <div>
+      <div>
 
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-        </div>
+      </div>
 
 
       </ul>
