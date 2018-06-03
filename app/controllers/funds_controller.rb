@@ -27,10 +27,13 @@ class FundsController < ApplicationController
   # POST /funds
   # POST /funds.json
   def create
+    @uid = params[:u_id]
     @fund = Fund.new(fund_params)
 
     respond_to do |format|
       if @fund.save
+
+        FundMailer.fund_confirmation(@fund, current_user ).deliver
         format.html { redirect_to "/projects/"+@fund.project_id.to_s, notice: 'Fund was successfully created.' }
         format.json { render :show, status: :created, location: @fund }
       else
