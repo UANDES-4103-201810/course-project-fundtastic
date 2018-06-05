@@ -44,6 +44,8 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
