@@ -1,6 +1,9 @@
 <%=link_to @user.name ,@user %>
 <p>Thank you for funding this project</p>
 
+
 <p> Dont forget to go to your Profile to see all your funded projects!</p>
+
+<p> Confirm your fund in the following link</p>
 <%= confirm_mail_fund_url(@fund.confirm_token) %>
 
