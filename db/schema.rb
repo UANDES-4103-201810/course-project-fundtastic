@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180601195632) do
+ActiveRecord::Schema.define(version: 20180609180724) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20180601195632) do
     t.boolean "stagereceive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "fund_confirmed", default: false
+    t.string "confirm_token"
     t.index ["project_id"], name: "index_funds_on_project_id"
     t.index ["user_id"], name: "index_funds_on_user_id"
   end

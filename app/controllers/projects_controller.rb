@@ -17,9 +17,10 @@ class ProjectsController < ApplicationController
     @funds = @project.funds
     @total = 0
     @funds.each do |fund|
+      if fund.fund_confirmed== true
       @total = @total + fund.cost
       end
-
+    end
   end
 
   # GET /projects/new

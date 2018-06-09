@@ -31,10 +31,11 @@ class FundsController < ApplicationController
     @fund = Fund.new(fund_params)
 
     respond_to do |format|
-      if @fund.save
 
+      if @fund.save
         FundMailer.fund_confirmation(@fund, current_user ).deliver
-        format.html { redirect_to "/projects/"+@fund.project_id.to_s, notice: 'Fund was successfully created.' }
+
+        format.html { redirect_to "/projects/"+@fund.project_id.to_s, notice: 'Confirm Fund In Email.' }
         format.json { render :show, status: :created, location: @fund }
       else
         format.html { render :new }
@@ -42,6 +43,19 @@ class FundsController < ApplicationController
       end
     end
   end
+
+  def confirm_mail
+    @pid = params[:f_id]
+    fund = Fund.find_by_confirm_token(params[:id])
+    if fund
+      fund.mail_activate
+      redirect_to '/',notice: 'Fund Succesfully Confirmed.'
+
+
+    else
+      redirect_to '/users'
+    end
+    end
 
   # PATCH/PUT /funds/1
   # PATCH/PUT /funds/1.json
