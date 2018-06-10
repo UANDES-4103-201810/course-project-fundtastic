@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :project_categories
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-  resources :rols
   resources :funds do
     member do
       get :confirm_mail

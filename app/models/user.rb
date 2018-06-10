@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
 	has_attached_file :avatar ,  styles: { medium: "200x200>", thumb: "50x50>#" }
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-	has_one :rol
 	has_many :projects ,:dependent => :destroy
 	has_many :funds,:dependent => :destroy
 	has_many :user_promises,:dependent => :destroy
