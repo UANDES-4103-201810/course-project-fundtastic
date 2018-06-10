@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @projects = @user.projects
+    @ary = Array.new
+    @ary1 = Array.new
     #@funds = @user.funds
   end
 
