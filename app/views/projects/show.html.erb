@@ -110,6 +110,9 @@
     <h4 class="card-title">  <%= markdown ('#'+@project.title) %> </h4>
      <p class="card-text">by: <%= @project.user.name %> </p>
     <p class="card-text"> <%= @project.info %> </p>
+     <td><%= link_to 'Edit', edit_project_path(@project) %></td>
+     <td><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <div></div>
      <% @categories.each do |category| %>
        <td> <%="Category " +category.name %> </td>
        <td><%= link_to 'Show', category %></td>

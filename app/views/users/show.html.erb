@@ -166,16 +166,21 @@
           <% if wishlist.user_id == @user.id %>
             <% Project.all.each do |project| %>
               <% if wishlist.project_id == project.id %>
+                <% @ary1.push(project) %>
 
-                <div class="col-sm">
-                  <h1><%=image_tag  project.image.url(:medium) %> </h1>
-                  <td> <%= project.title %> </td>
-                  <td><%= link_to 'Show', project %></td>
-                  <td><%= link_to 'Delete', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-                </div>
+
           <% end %>
             <% end %>
         <% end %>
+        <% end %>
+
+        <% @ary1.uniq.each do |project| %>
+
+          <div class="col-sm">
+            <h1><%=image_tag  project.image.url(:medium) %> </h1>
+            <td> <%= project.title %> </td>
+            <td><%= link_to 'Show', project %></td>
+            <a class="btn btn-info" style="color:#ffffff">Delete</a>  </div>
         <% end %>
 
       </div>
@@ -203,14 +208,21 @@
         <% if fund.user_id == @user.id %>
           <% Project.all.each do |project| %>
             <% if fund.project_id == project.id %>
+                  <% if fund.fund_confirmed == true %>
+                   <% @ary.push(project) %>
 
-              <div class="col-sm">
-                <h1><%=image_tag  project.image.url(:medium) %> </h1>
-                <td> <%= project.title %> </td>
-                <td><%= link_to 'Show', project %></td>
-              </div>
             <% end %>
+                <% end %>
           <% end %>
         <% end %>
 <% end %>
+
+          <% @ary.uniq.each do |project| %>
+
+            <div class="col-sm">
+              <h1><%=image_tag  project.image.url(:medium) %> </h1>
+              <td> <%= project.title %> </td>
+              <td><%= link_to 'Show', project %></td>
+            </div>
+          <% end %>
         </div>
