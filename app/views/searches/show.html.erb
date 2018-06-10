@@ -119,10 +119,19 @@
 
 </div>
 
+<% if @search.search_projects.empty?%>
+  <div class="container">
+    <div class="jumbotron">
+       <h1>No Matches Found</h1>
+
+    </div>
+  </div>
+<% end %>
 
 
 
 <% @search.search_projects.each do |c|%>
+
 <div class="div" >
 
 

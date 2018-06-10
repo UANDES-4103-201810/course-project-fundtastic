@@ -103,9 +103,7 @@ a:hover{
  }
 
 
-a:hover, a:active {
-    background-color:;
-}
+
 #fundedp{
     text-align: center;
 }
@@ -118,5 +116,6 @@ a:hover, a:active {
 .navbar-brand{
     background-color:transparent ;
 }
+
 
 
