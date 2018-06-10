@@ -1,8 +1,8 @@
-User.create(name:'admin', lastname:'admin', address:'camino del admin', creditcard:'789' , created_at:'2018-05-26 21:31:21', updated_at: '2018-05-26 21:31:21', email: 'admin@miuandes.cl', avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, admin: true, password:'12345678' )
+User.create(name:'admin', lastname:'admin', address:'camino del admin', creditcard:'789' , created_at:'2018-05-26 21:31:21', updated_at: '2018-05-26 21:31:21', email: 'fundtastic2018@gmail.com', avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, admin: true, password:'12345678' )
 
-Project.create(title: 'galaxy s', info: 'movil for cominication in long distances', goal: 1000, daystogo: '25', release: DateTime.new(2009,9,14,8), user_id: 1)
-Project.create(title: 'volvito', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', release: DateTime.new(2011,9,14,8), user_id: 1)
-Project.create(title: 'meche', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', release: DateTime.new(2010,9,14,8), user_id: 1)
+Project.create(title: 'galaxy s', info: 'movil for cominication in long distances', goal: 1000, daystogo: '25', release: DateTime.new(2009,9,14,8), user_id: 1,image: File.new('app/assets/images/phone.jpg', 'r'))
+Project.create(title: 'volvito', info: 'awesome and safe automovil to go everywhere', goal: 1000, daystogo: '25', release: DateTime.new(2011,9,14,8), user_id: 1,image: File.new('app/assets/images/volvito.jpeg', 'r'))
+Project.create(title: 'A320', info: 'awesome and safe airplane to go everywhere', goal: 10000, daystogo: '225', release: DateTime.new(2010,9,14,8), user_id: 1, image: File.new('app/assets/images/plane.jpeg', 'r'))
 
 Category.create(name: 'technology')
 Category.create(name: 'car')
