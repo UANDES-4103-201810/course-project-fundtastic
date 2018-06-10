@@ -39,6 +39,7 @@ gem 'cancancan', '~> 1.15'
 gem 'paperclip', '~> 4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'therubyracer'
+gem 'rails_admin', '~> 1.3'
 
 gem 'omniauth'
 
