@@ -175,10 +175,7 @@
 
   &nbsp; &nbsp; &nbsp; &nbsp;
 </div>
-<% if  @project.user == current_user %>
 
-  <%= link_to 'New Promise', new_promise_path(p_id: @project.id) %>
-<%end%>
 
 <% @promises.each do |promise| %>
 
@@ -228,6 +225,10 @@
 
 
 <div></div>
+<% if  @project.user == current_user %>
+
+  <%= link_to 'New Promise', new_promise_path(p_id: @project.id) %>
+<%end%>
 <div></div>
 <div></div>
 

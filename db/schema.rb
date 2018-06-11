@@ -74,12 +74,6 @@ ActiveRecord::Schema.define(version: 20180609180724) do
     t.index ["project_id"], name: "index_promises_on_project_id"
   end
 
-  create_table "rols", force: :cascade do |t|
-    t.string "rol"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.string "keywords"
     t.string "category"
