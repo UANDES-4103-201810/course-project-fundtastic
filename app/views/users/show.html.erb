@@ -121,14 +121,17 @@
   <div class="container">
     <div class="jumbotron">
       &nbsp;<h1><%=image_tag  @user.avatar.url(:medium) %> </h1> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<div class="btn btn-info" style="color:#f0f0f0 " ><%= link_to 'Edit', edit_user_path(@user) %> </div>
-      <h1><%= @user.name %> <%= @user.lastname %></h1>
+      <%= markdown ('#'+@user.name+@user.lastname) %>
+
       <strong>Address:</strong>
-      <%=  @user.address %>
+     <p> <%=  @user.address %></p>
+
+
       <strong>email:</strong>
       <p> <%= @user.email %></p>
       <strong>credit card info:</strong>
       <p> <%= @user.creditcard %></p>
-      <%= markdown ('#'+@user.name) %>
+
       <div class="fundedp">
 
 

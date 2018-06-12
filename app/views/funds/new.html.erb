@@ -130,12 +130,12 @@
       <div class="container">
         <div class="jumbotron">
           <%=form_for @fund, method: 'POST' do |xx| %>
-            <label for="cost1">Promise Price $</label>
-            <%= @pcost %>
+            <label for="cost1">Are you sure you want to  buy a <%= @pcost %> $promise? </label>
+
             <div> <%= xx.hidden_field :cost, :value => @pcost  %></div>
             <p> <%= xx.hidden_field :user_id, :value => @uid%></p>
             <p> <%= xx.hidden_field :project_id, :value => @pid%></p>
-            <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
+            <a class="btn btn-primary m-1"  role="button"><%= xx.submit "Yes" %></a>
             </div>
     <%end%>
     <% end %>

@@ -123,6 +123,7 @@
     <div class="jumbotron">
  <h1>Editing User</h1>
       <%= form_for @user, method: 'PATCH' do |xx| %>
+        <div> <%= xx.file_field :image  %></div>
         <label> Name </label>
         <%= xx.text_field :name %>
         <label> Last Name </label>
@@ -131,6 +132,8 @@
         <%= xx.text_field :address %>
         <label> Email </label>
         <%= xx.text_field :email %>
+        <label> Password(Min 8 characters) </label>
+        <%= xx.text_field :password %>
 
         <label> Credir Card Number </label>
         <%= xx.text_field :creditcard %>
