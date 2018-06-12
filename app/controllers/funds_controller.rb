@@ -17,6 +17,7 @@ class FundsController < ApplicationController
     @fund = Fund.new
     @uid = params[:u_id]
     @pid = params[:f_id]
+    @pcost = params[:p_cost]
 
   end
 
