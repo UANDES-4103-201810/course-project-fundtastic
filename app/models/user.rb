@@ -11,10 +11,10 @@ class User < ApplicationRecord
 	has_many :funds,:dependent => :destroy
 	has_many :user_promises,:dependent => :destroy
 	has_many :wishlist
-	validates :name, presence: true
-	validates :email, uniqueness: true
-	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, message: "Error" }
-	validates :password, length: { in: 8..12 }
+	#validates :name, presence: true
+	#validates :email, uniqueness: true
+	#validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, message: "Error" }
+	#validates :password, length: { in: 8..12 }
 	def admin?
 		self.admin == true
 	end

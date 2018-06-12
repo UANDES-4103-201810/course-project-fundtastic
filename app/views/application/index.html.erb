@@ -41,6 +41,7 @@
         <li class="nav-item active">
           <a class="btn btn-info" style="color:#ffffff" href="/categories">Explore</a>
 
+
         </li>
         <div>
 
@@ -52,6 +53,9 @@
         <%=link_to"Search it", new_search_path%>
 
         </ul>
+      <% if current_user.try(:admin?) %>
+        <a class="btn btn-info" style="color:#ffffff" href="/admin">Administration</a>
+      <% end %>
 
         <div>
 
