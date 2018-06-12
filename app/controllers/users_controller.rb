@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.search(params[:search])
+
   end
 
   # GET /users/1
@@ -13,6 +14,9 @@ class UsersController < ApplicationController
     @projects = @user.projects
     @ary = Array.new
     @ary1 = Array.new
+    if @user.address==nil
+      redirect_to edit_user_path(@user)
+    end
     #@funds = @user.funds
   end
 
