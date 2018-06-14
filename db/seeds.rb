@@ -12,8 +12,6 @@ ProjectCategory.create(project_id: 1, category_id: 1)
 ProjectCategory.create(project_id: 2, category_id: 2)
 ProjectCategory.create(project_id: 3, category_id: 2)
 
-Wishlist.create(user_id: 1, project_id: 1)
-
 Promise.create(title: 'Promise1', info: 'a very nice keychan for your volvito', price: 200, date: DateTime.new(2009,9,14,8), project_id: 2, image: File.new('app/assets/images/key.jpg', 'r'))
 
 # This file should contain all the record creation needed to seed the database with its default values.
