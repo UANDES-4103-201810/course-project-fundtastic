@@ -175,6 +175,7 @@
           <div class="page-header">
             <h1>Wishlist</h1>
       </div>
+
         <% Wishlist.all.each do |wishlist| %>
           <% if wishlist.user_id == @user.id %>
             <% Project.all.each do |project| %>
@@ -186,16 +187,18 @@
             <% end %>
         <% end %>
         <% end %>
-
+        <div class="row">
         <% @ary1.uniq.each do |project| %>
 
           <div class="col-sm">
             <h1><%=image_tag  project.image.url(:medium) %> </h1>
             <td> <%= project.title %> </td>
             <td><%= link_to 'Show', project %></td>
-            <a class="btn btn-info" style="color:#ffffff">Delete</a>  </div>
-        <% end %>
+            <a class="btn btn-info" style="color:#ffffff">Delete </a> <% @ary1.delete(project)%> </div>
 
+
+        <% end %>
+        </div>
       </div>
 
 
@@ -229,7 +232,7 @@
           <% end %>
         <% end %>
 <% end %>
-
+          <div class="row">
           <% @ary.uniq.each do |project| %>
 
             <div class="col-sm">
@@ -238,4 +241,5 @@
               <td><%= link_to 'Show', project %></td>
             </div>
           <% end %>
+          </div>
         </div>
