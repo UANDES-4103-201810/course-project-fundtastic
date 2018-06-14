@@ -1,5 +1,4 @@
 
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -17,10 +16,10 @@
 
 
 <!-- Navigation -->
-<!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="/assets/Logos/Fun-2331c2516b8781e6c36fec980ae7e06390d1fca892ce10f3dd750b6a7d4bed40.png" width="150"></a>
+    <a class="navbar-brand" href="/"><img src="/assets/Fundtastic-a7da83e586ce1ac15efe236b73a85363344eb9134e595c194dd0a526b6c89567.jpg" width="150"></a>
+
 
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -28,23 +27,27 @@
         <li class="nav-item active">
           <a class="btn btn-info" style="color:#ffffff" href="/categories">Explore</a>
 
+
         </li>
         <div>
 
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
         </div>
-        <li <%=form_tag projects_path, :method=> 'get' do  %>
-          <%=text_field_tag :search ,params[:search]  %>
-          <%=submit_tag"Lets Fund it!"  %><%end%>
-        <%=link_to"Advanced Search", new_search_path%>
-        </li>
 
-        <div>
 
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <%=link_to"Search it", new_search_path%>
 
-        </div>
+      </ul>
+      <% if current_user.try(:admin?) %>
+        <a class="btn btn-info" style="color:#ffffff" href="/admin">Administration</a>
+      <% end %>
+
+      <div>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+      </div>
 
 
       </ul>
@@ -93,7 +96,6 @@
 
   </div>
 </nav>
-<p id="notice"><%= notice %></p>
 
 
 <div>
@@ -116,10 +118,14 @@
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
 </div>
-<h2>Forgot your password?</h2>
 
 
 
+<h2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Forgot your password?</h2>
+
+
+<div class="container">
+  <div class="jumbotron">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -132,5 +138,6 @@
     <%= f.submit "Send me reset password instructions" %>
   </div>
 <% end %>
+  </div></div>
 
 

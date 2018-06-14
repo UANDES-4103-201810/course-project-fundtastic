@@ -126,20 +126,26 @@
       <%= form_for @user, method: 'PATCH' do |xx| %>
         <div> <%= xx.file_field :image  %></div>
         <label> Name </label>
-        <%= xx.text_field :name %>
+        <div> <%= xx.text_field :name %></div>
         <label> Last Name </label>
-        <%= xx.text_field :lastname %>
+        <div> <%= xx.text_field :lastname %></div>
         <label> Address </label>
-        <%= xx.text_field :address %>
+        <div> <%= xx.text_field :address %></div>
         <label> Email </label>
-        <%= xx.text_field :email %>
+        <div><div> <%= xx.text_field :email %></div>
         <label> Password(Min 8 characters) </label>
-        <%= xx.text_field :password %>
+          <div> <%= xx.text_field :password %></div>
 
         <label> Credir Card Number </label>
-        <%= xx.text_field :creditcard %>
+        <div> <%= xx.text_field :creditcard %></div>
         <%= xx.submit "modify User" %>
       <% end %>
+
+
+
+
+
+
 
 
 
