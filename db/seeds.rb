@@ -12,10 +12,6 @@ ProjectCategory.create(project_id: 1, category_id: 1)
 ProjectCategory.create(project_id: 2, category_id: 2)
 ProjectCategory.create(project_id: 3, category_id: 2)
 
-
-
-Fund.create(user_id: 1, project_id: 1, cost: 258, stagemail: true, stageaprove: true, stagereceive: true)
-
 Wishlist.create(user_id: 1, project_id: 1)
 
 Promise.create(title: 'Promise1', info: 'a very nice keychan for your volvito', price: 200, date: DateTime.new(2009,9,14,8), project_id: 2, image: File.new('app/assets/images/key.jpg', 'r'))
