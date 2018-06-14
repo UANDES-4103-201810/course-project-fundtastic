@@ -5,6 +5,7 @@ class AddAttachmentAvatarToUsers < ActiveRecord::Migration[5.1]
     end
   end
 
+
   def self.down
     remove_attachment :users, :avatar
   end

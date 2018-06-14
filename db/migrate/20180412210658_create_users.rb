@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
 			t.string :creditcard
 	
 
+
       t.timestamps
     end
   end

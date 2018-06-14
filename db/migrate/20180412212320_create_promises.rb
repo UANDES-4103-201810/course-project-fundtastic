@@ -8,5 +8,6 @@ class CreatePromises < ActiveRecord::Migration[5.1]
       t.references :project, foreign_key: true
       t.timestamps
     end
+
   end
 end
