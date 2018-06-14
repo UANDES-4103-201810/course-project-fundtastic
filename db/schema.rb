@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180614185947) do
+ActiveRecord::Schema.define(version: 20180614191402) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -22,9 +22,6 @@ ActiveRecord::Schema.define(version: 20180614185947) do
     t.integer "user_id"
     t.integer "project_id"
     t.integer "cost"
-    t.boolean "stagemail"
-    t.boolean "stageaprove"
-    t.boolean "stagereceive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "fund_confirmed", default: false
